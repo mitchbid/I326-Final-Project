@@ -9,10 +9,14 @@ class Yelp_Data:
 data types """
     def __init__():
     """ a function to initilize our variables and 
+<<<<<<< HEAD
     attributes of the class
     Side effects:
         Sets attribute for Yelp Data dictionary"""
         self.Yelp_Dict = {}
+=======
+    attributes of the class"""
+>>>>>>> b4e7e5ece92e080f95015a3b7e910f59032b74d5
     
     def __read__():
         """ a function to read the data 
