@@ -2,6 +2,8 @@
 
 
 """Final Project: Resturant Ratings Generator  """
+import pandas as pd
+
 
 class Yelp_Data: 
     """ A class that reads datafile and iterates through
@@ -15,7 +17,15 @@ class Yelp_Data:
                 Side effects: 
                     Sets attribute for Yelp Data dictionary
         """
+        #this is for name of resturant, price, no data for cuisine type
+        
+        yelp=pandas.read_json("Yelp_Data")
+        yelp.drop([col1, col2 ... ])
+        #create a dataframe from a dictionary 
+        df=pd.Dataframe()
         self.Yelp_Dict = {}
+        #for ratings and stars 
+        
         
     def df_merge(self):
         """
