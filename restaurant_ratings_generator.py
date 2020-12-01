@@ -5,25 +5,27 @@
 import pandas as pd
 
 
-class Yelp_Data: 
+class Zomato_Data: 
     """ A class that reads datafile and iterates through
     data types """
-    def __init__(self,filename,url):
+    def __init__(self,filename):
         """ 
-        (Nur) a function to initialize our variables and reads in our data,
-        creates two dataframes
+        (Nur) Function that reads in csv file, transfers to data frame
             Args:
-                Url (rss) - url path containing our dataset
+                Filename (csv) - csv file containing restaraunt data
                 Side effects: 
-                    Sets attribute for Yelp Data dictionary
+                    Sets attribute forzomato Data dictionary
         """
+        self.filename = filename
         #this is for name of resturant, price, no data for cuisine type
-        
-        yelp=pandas.read_json("Yelp_Data")
-        yelp.drop([col1, col2 ... ])
+        zomato=pd.read_csv(filename, usecols = ['Resturant Name','City',
+                                                'Address','Cuisines',
+                                                'Price range',
+                                                'Aggregate rating',
+                                                'Rating text'])
+        #zomato.drop()
         #create a dataframe from a dictionary 
-        df=pd.Dataframe()
-        self.Yelp_Dict = {}
+        df=pd.Dataframe(zomato)
         #for ratings and stars 
         
         
@@ -36,8 +38,8 @@ class Yelp_Data:
                 data_yelp (dict) - new dictionary with matched key value pairs
         """   
         #data_yelp = {}
-        #for i in Yelp_Data:
-            #if x in yelp_data:
+        #for i inzomato_Data:
+            #if x inzomato_data:
                 #x.append(data_yelp)
                 
     def input_rating(self):
