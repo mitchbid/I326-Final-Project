@@ -1,33 +1,21 @@
 """ Mitchell Biderberg, Nasir Zaidi, Nkunim Antwi, Nur Mulugeta"""
-
+from argparse import ArgumentParser
 
 """Final Project: Resturant Ratings Generator  """
-import pandas as pd
 
-
-class Zomato_Data: 
+class Yelp_Data: 
     """ A class that reads datafile and iterates through
     data types """
-    def __init__(self,filename):
+    def __init__(self,filename,url):
         """ 
-        (Nur) Function that reads in csv file, transfers to data frame
+        (Nur) a function to initialize our variables and reads in our data,
+        creates two dataframes
             Args:
-                Filename (csv) - csv file containing restaraunt data
+                Url (rss) - url path containing our dataset
                 Side effects: 
-                    Sets attribute forzomato Data dictionary
+                    Sets attribute for Yelp Data dictionary
         """
-        self.filename = filename
-        #this is for name of resturant, price, no data for cuisine type
-        zomato=pd.read_csv(filename, usecols = ['Resturant Name','City',
-                                                'Address','Cuisines',
-                                                'Price range',
-                                                'Aggregate rating',
-                                                'Rating text'])
-        #zomato.drop()
-        #create a dataframe from a dictionary 
-        df=pd.Dataframe(zomato)
-        #for ratings and stars 
-        
+        self.Yelp_Dict = {}
         
     def df_merge(self):
         """
@@ -38,8 +26,8 @@ class Zomato_Data:
                 data_yelp (dict) - new dictionary with matched key value pairs
         """   
         #data_yelp = {}
-        #for i inzomato_Data:
-            #if x inzomato_data:
+        #for i in Yelp_Data:
+            #if x in yelp_data:
                 #x.append(data_yelp)
                 
     def input_rating(self):
@@ -85,4 +73,7 @@ def parse_args(arglist):
     """
     (Nkunim) Parses command line arguments 
     """
+    parser = ArgumentParser()
+    parser.add_argument("filename", help="the name of the file that has the Yelp data")
+    return parser.parse_args(arglist)
 if __name__ == "__main__":
